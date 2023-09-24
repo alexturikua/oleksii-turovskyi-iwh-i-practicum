@@ -5,7 +5,7 @@ html
     head 
         title= `${title}`
         meta(name="viewport" content="width=device-width, initial-scale=1")
-        link(rel="stylesheet", href="/css/style.css")
+        link(rel="stylesheet", href="/css/output.css")
     body 
 
         div(class="container")
@@ -14,10 +14,12 @@ html
         h1 Contacts
         .cards 
             each contact in data
-                .card 
-                    h2.card__name #{contact.properties.firstname}  #{contact.properties.lastname}
-                    p.card__email #{contact.properties.email}
-                    p.card__property1 #{contact.properties.property1}
-                    p.card__property2 #{contact.properties.property2}
-                    p.card__property3 #{contact.properties.property3}
-                    a(href="/update-cobj?email="+contact.properties.email) Edit  Contact Property
+                 a(class="group" href="/update-cobj?email="+contact.properties.email)
+                    .card.user 
+                            h3(class="card__name group-hover:text-red-500") #{contact.properties.firstname}  #{contact.properties.lastname}
+                            hr
+                            p.card__email #{contact.properties.email}
+                            p.card__property1 #{contact.properties.property1}
+                            p.card__property2 #{contact.properties.property2}
+                            p.card__property3 #{contact.properties.property3}
+                            //- a(href="/update-cobj?email="+contact.properties.email) Edit  Contact Property
