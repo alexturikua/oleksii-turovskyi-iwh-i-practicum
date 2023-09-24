@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    title Create or Update Custom Object
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    link(rel="stylesheet", href="/css/style.css")
+  body
+    h1 Create or Update Custom Object
+    form(action="/update-cobj" method="post")
+      input(type="hidden" name="email" value=data.properties.email)
+      br
+      label(for="property1") Property 1:
+      input(type="text" id="property1" name="property1" value=data.properties.property1)
+      br
+      label(for="property2") Property 2:
+      input(type="text" id="property2" name="property2" value=data.properties.property2)
+      br
+      label(for="property3") Property 3:
+      input(type="text" id="property3" name="property3" value=data.properties.property3)
+      br
+      input(type="submit" value="Submit")
